@@ -39,14 +39,16 @@ class Person:
         self.dob = dob
         self.height = height
         self.weight = weight
-        isMale, isFemale = set_gender(isMale)
+        #isMale, isFemale = self.set_gender(isMale)
         
+    def get_name(self):
+        return self.name
+
     def set_gender(self, isMale):
         if (isMale):
             return True, False
         else:
             return False, True
-    
     
 
 
