@@ -72,8 +72,8 @@ class Person:
             return False, True
 
     def calculate_age(self):
-        dob_str = self.get_dob()
-        dob = datetime.strptime(dob_str, '%d-%m-%Y')
+        
+        dob = datetime.strptime(self.get_dob(), '%d-%m-%Y')
         today = datetime.today()
         age = today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
         return age
@@ -81,6 +81,14 @@ class Person:
     def calculate_bmi(self):
         # bmi = W / H ** 2
         return round((self.get_weight() / (self.get_height(True) ** 2)), 1)
+
+    def __str__(self):
+        return (
+            f'Hi, my name is {self.get_name()}. '\
+            f'I am {self.calculate_age()} years old, '\
+            f'born on {self.get_dob()}.'
+        )
+                
 
     
 
