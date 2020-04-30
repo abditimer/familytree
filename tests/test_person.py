@@ -1,7 +1,7 @@
 # test_with_unittest.py
 from unittest import TestCase
 import pytest
-from person import Person
+from familytree.person import Person
 
 abdi = Person('abdi', '03-05-1993', '195', '100', True)
 sara = Person('sara', '04-04-1943', '155', '60', False)
