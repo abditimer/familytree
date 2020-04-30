@@ -39,10 +39,29 @@ class Person:
         self.dob = dob
         self.height = height
         self.weight = weight
-        #isMale, isFemale = self.set_gender(isMale)
+        self.isMale, self.isFemale = self.set_gender(isMale)
         
     def get_name(self):
         return self.name
+
+    def get_dob(self):
+        return self.dob
+
+    def get_height(self):
+        return self.height
+    
+    def get_weight(self):
+        return self.weight
+
+    def get_gender(self):
+        # If person is Male
+        if self.isMale:
+            return 'Male'
+        else:
+            return 'Female'
+
+    def print_gender(self):
+        return f'{self.get_name()} is a {self.get_gender()}'
 
     def set_gender(self, isMale):
         if (isMale):
