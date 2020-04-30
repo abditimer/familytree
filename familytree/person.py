@@ -63,7 +63,8 @@ class Person:
             return 'Female'
 
     def print_gender(self):
-        return f'{self.get_name()} is a {self.get_gender()}'
+        gender = self.get_gender()
+        return f'{self.get_name()} is a {gender}'
 
     def set_gender(self, isMale):
         if (isMale):
