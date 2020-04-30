@@ -23,3 +23,6 @@ def test_sara_gender():
 
 def test_age():
     assert abdi.calculate_age() == 26
+
+def test_weight():
+    assert abdi.calculate_bmi() == 26.3

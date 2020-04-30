@@ -46,11 +46,14 @@ class Person:
     def get_dob(self):
         return self.dob
 
-    def get_height(self):
-        return self.height
+    def get_height(self, inMetres):
+        if inMetres:
+            return int(self.height) / 100
+        else:
+            return int(self.height)
     
     def get_weight(self):
-        return self.weight
+        return int(self.weight)
 
     def get_gender(self):
         # If person is Male
@@ -74,6 +77,11 @@ class Person:
         today = datetime.today()
         age = today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
         return age
+    
+    def calculate_bmi(self):
+        # bmi = W / H ** 2
+        return round((self.get_weight() / (self.get_height(True) ** 2)), 1)
+
     
 
 
