@@ -20,3 +20,6 @@ def test_sara_name():
 
 def test_sara_gender():
     assert sara.get_gender() == 'Female'
+
+def test_age():
+    assert abdi.calculate_age() == 26

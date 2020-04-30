@@ -1,5 +1,6 @@
 # TODO: To create abstract class, i need to inherit ABC
 from abc import ABC, abstractmethod
+from datetime import datetime
 
 class Person:
     """
@@ -24,8 +25,6 @@ class Person:
 
     Methods
     -------
-    set_gender(isMale)
-        sets the gender of the 
     calculate_age()
         calculates the age of a person
     calculate_relationship()
@@ -68,6 +67,13 @@ class Person:
             return True, False
         else:
             return False, True
+
+    def calculate_age(self):
+        dob_str = self.get_dob()
+        dob = datetime.strptime(dob_str, '%d-%m-%Y')
+        today = datetime.today()
+        age = today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
+        return age
     
 
 
